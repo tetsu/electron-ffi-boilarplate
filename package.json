@@ -1,0 +1,23 @@
+{
+  "name": "canon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/electron .",
+    "rebuild": "./node_modules/.bin/electron-rebuild.cmd",
+    "gyp": "./node_modules/.bin/node-gyp clean"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^3.0.10",
+    "node-gyp": "^3.8.0",
+    "ref": "^1.3.5",
+    "ffi": "git+https://github.com/node-ffi/node-ffi.git"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^1.8.2"
+  }
+}
