@@ -1,10 +1,31 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>はろーわーるど</title>
+  <meta charset="UTF-8">
+  <title>Canon DLL Test</title>
 </head>
 <body>
-はろーわーるど
+  <a>Sample</a>
+  <script>
+    var ffi = require('ffi');
+    var ref = require('ref');
+
+    var stringPtr = ref.refType(ref.types.CString);
+    var intPtr = ref.refType("int");
+    var voidObj = ref.types.void;
+    var voidPtr = ref.refType(voidObj);
+
+    try{
+      var EDSDKPath = __dirname + '/EDSDK.dll';
+      var EDSDK = ffi.Library(EDSDKPath, {
+        // 'GetCameraList': [intPtr, []]
+      });
+      var result = EDSDK.EdsGetCameraList();
+      alert(result);
+    } catch (e) {
+      alert(e);
+      throw e;
+    }
+  </script>
 </body>
 </html>
