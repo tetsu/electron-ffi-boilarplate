@@ -18,3 +18,7 @@ npm --add-python-to-path install --global windows-build-tools
 ```
 npm i
 ```
+1. Rebuild Electron to use ffi.
+```
+.\node_modules\.bin\electron-rebuild
+```
