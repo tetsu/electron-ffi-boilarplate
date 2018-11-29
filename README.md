@@ -1,5 +1,5 @@
-# electron-ffi-boilarplate
-electron-ffi-boilarplate
+# electron-ffi-boilerplate
+A boilerplate to run Windows DLL in Electron apps.
 
 1. Install node in your Windows computer.
 1. Clone this project in your prefered folder.
