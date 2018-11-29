@@ -3,9 +3,9 @@ electron-ffi-boilarplate
 
 1. Install node in your Windows computer.
 1. Clone this project in your prefered folder.
-```
-git clone git@github.com:tetsu/electron-ffi-boilarplate.git
-```
+  ```
+  git clone git@github.com:tetsu/electron-ffi-boilarplate.git
+  ```
 1. Move to electron-ffi-boilarplate folder.
 ```
 cd electron-ffi-boilarplate
