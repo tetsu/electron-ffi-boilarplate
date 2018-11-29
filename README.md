@@ -31,3 +31,11 @@ A boilerplate to run Windows DLL in Electron apps.
     ```
     .\node_modules\.bin\electron-rebuild
     ```
+
+1. Download "sqlite3.dll" from [SQLITE download page](https://www.sqlite.org/download.html), and copy "sqlite3.dll" in the root folder of this project.
+
+1. Run this program.
+
+```
+npm start
+```
