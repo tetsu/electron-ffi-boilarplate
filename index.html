@@ -7,25 +7,43 @@
 <body>
   <a>Sample</a>
   <script>
-    var ffi = require('ffi');
-    var ref = require('ref');
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DLL TEST</title>
+</head>
+<body>
+    <script>
+      var ref = require('ref');
+      var ffi = require('ffi');
 
-    var stringPtr = ref.refType(ref.types.CString);
-    var intPtr = ref.refType("int");
-    var voidObj = ref.types.void;
-    var voidPtr = ref.refType(voidObj);
+      // typedef
+      var sqlite3 = ref.types.void; // we don't know what the layout of "sqlite3" looks like
+      var sqlite3Ptr = ref.refType(sqlite3);
+      var sqlite3PtrPtr = ref.refType(sqlite3Ptr);
+      var stringPtr = ref.refType(ref.types.CString);
 
-    try{
-      var EDSDKPath = __dirname + '/EDSDK.dll';
-      var EDSDK = ffi.Library(EDSDKPath, {
-        // 'GetCameraList': [intPtr, []]
-      });
-      var result = EDSDK.EdsGetCameraList();
-      alert(result);
-    } catch (e) {
-      alert(e);
-      throw e;
-    }
+      // binding to a few "libsqlite3" functions...
+      try {
+        var libsqlite3 = ffi.Library('./sqlite3.dll', {
+          'sqlite3_open': [ 'int', [ 'string', sqlite3PtrPtr ] ],
+          'sqlite3_close': [ 'int', [ sqlite3Ptr ] ],
+          'sqlite3_exec': [ 'int', [ sqlite3Ptr, 'string', 'pointer', 'pointer', stringPtr ] ],
+          'sqlite3_changes': [ 'int', [ sqlite3Ptr ]]
+        });
+        alert(libsqlite3);
+        // now use them:
+        var dbPtrPtr = ref.alloc(sqlite3PtrPtr);
+        libsqlite3.sqlite3_open("test.sqlite3", dbPtrPtr);
+        var dbHandle = dbPtrPtr.deref();
+      } catch (e) {
+        alert(e);
+        throw e;
+      }
+    </script>
+</body>
+</html>
   </script>
 </body>
 </html>
