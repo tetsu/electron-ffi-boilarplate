@@ -10,23 +10,24 @@ electron-ffi-boilarplate
 
 1. Move to electron-ffi-boilarplate folder.
 
-```
-cd electron-ffi-boilarplate
-```
+    ```
+    cd electron-ffi-boilarplate
+    ```
 
 1. Install Windows Build Tools and create path.
 
-```
-npm --add-python-to-path install --global windows-build-tools
-```
+    ```
+    npm --add-python-to-path install --global windows-build-tools
+    ```
 
 1. Import other packages for this project.
 
-```
-npm i
-```
+    ```
+    npm i
+    ```
 
 1. Rebuild Electron to use ffi.
-```
-.\node_modules\.bin\electron-rebuild
-```
+
+    ```
+    .\node_modules\.bin\electron-rebuild
+    ```
