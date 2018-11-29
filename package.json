@@ -1,5 +1,5 @@
 {
-  "name": "canon",
+  "name": "electron-ffi-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "rebuild": "./node_modules/.bin/electron-rebuild.cmd",
     "gyp": "./node_modules/.bin/node-gyp clean"
   },
-  "author": "",
+  "author": "Tetsuro Mori",
   "license": "ISC",
   "dependencies": {
     "electron": "^3.0.10",
