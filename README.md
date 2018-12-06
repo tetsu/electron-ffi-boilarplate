@@ -14,7 +14,7 @@
     cd electron-ffi-boilarplate
     ```
 
-1. Install Windows Build Tools and create path.
+1. Open Windows Powershell as Administrator, and install Windows Build Tools and create path.
 
     ```
     npm --add-python-to-path install --global windows-build-tools
